@@ -11,11 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\QuizController;
 
-Route::get('hello', function() {
-    return '<html><body><h1>Hello</h1><p>This is sample page.
-    </p></body></html>';
-});
+Route::get('/quiz/{id?}', 'QuizController@index');
