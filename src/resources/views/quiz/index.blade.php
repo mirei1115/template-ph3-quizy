@@ -7,14 +7,23 @@
     <title>難読地名クイズ</title>
 </head>
 <body>
+
+  <h1>{{ $prefecture->name }}</h1>
   <div>
-    @foreach($choices[$id] as $choice)
-    <h1>この地名はなんて読む？</h1>
-    <ul>
-      <li>{{ $choice[0] }}
-      <li>{{ $choice[1] }}
-      <li>{{ $choice[2] }}
-    <ul>
+    @foreach($questions as $question)
+    <div>
+      <h1>{{ $loop->index + 1 }}. この地名はなんて読む？</h1>
+      <img src="{{$question->image}}" alt="地名画像">
+      <ul>
+        @foreach ($question->choices as $choice)
+        <li>{{ $choice->name }}</li>
+        @endforeach
+        <li>
+          <span>正解！</span><br>
+          <span>正解は「{{$question->name}}」です</span>
+        </li>
+      </ul>
+    </div>
     @endforeach
   </div>
 </body>
