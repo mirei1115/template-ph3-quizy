@@ -11,9 +11,9 @@
     @foreach($choices[$id] as $choice)
     <h1>この地名はなんて読む？</h1>
     <ul>
-      <li>{{ $choice[0] }}</li>
-      <li>{{ $choice[1] }}</li>
-      <li>{{ $choice[2] }}</li>
+      <li>{{ $choice[0] }}
+      <li>{{ $choice[1] }}
+      <li>{{ $choice[2] }}
     <ul>
     @endforeach
   </div>
