@@ -11,6 +11,12 @@
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 
-Route::get('/quiz/{id?}', 'QuizController@index');
+Route::get('quiz', 'QuizController@index');
+Route::get('quiz/{id}', 'QuizController@quiz')->name('quiz');
