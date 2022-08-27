@@ -15,9 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\QuizController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QuizController;
 
-// Route::get('quiz', 'QuizController@index');
-
-// Route::get('quiz/{id}', 'QuizController@quiz_contents')->name('quiz');
+Route::get('quiz', 'QuizController@index');
+Route::get('quiz/{id}', 'QuizController@quiz')->name('quiz');

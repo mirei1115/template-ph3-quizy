@@ -22,8 +22,7 @@ class CreateQuizyTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('prefecture_id');
-            $table->string('name');
-            $table->string('image');
+            $table->string('img');
             $table->timestamps();
         });
 

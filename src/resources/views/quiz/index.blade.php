@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>難読地名クイズ</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クイズ一覧</title>
+  <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/quizy.css') }}">
 </head>
 <body>
-
-  <h1>{{ $prefecture->name }}</h1>
-  <div>
-    @foreach($questions as $question)
-    <div>
-      <h1>{{ $loop->index + 1 }}. この地名はなんて読む？</h1>
-      <img src="{{$question->image}}" alt="地名画像">
-      <ul>
-        @foreach ($question->choices as $choice)
-        <li>{{ $choice->name }}</li>
-        @endforeach
-        <li>
-          <span>正解！</span><br>
-          <span>正解は「{{$question->name}}」です</span>
-        </li>
-      </ul>
-    </div>
+  <ul>
+    @foreach($data as $d)
+    <li class="prefecture_list">
+      <a href="{{ route('quiz', ['id' => $loop->iteration]) }}">{{$d->name}}</a>
+    </li>
     @endforeach
-  </div>
+  </ul>
 </body>
 </html>
